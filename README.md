@@ -1,2 +1,2 @@
-# PonyBuild_2019
- Пони-билд, основанный на сборке Baystation12 2015 года для игры Space Station 13. 
+# PonyBuild
+Пони-сборка игры Space Station 13. Основана на Baystation 12.
