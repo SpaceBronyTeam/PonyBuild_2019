@@ -30,7 +30,7 @@
 #define ui_belt "5:14,1:5"
 
 #define ui_equip null
-#define ui_swaphand "7:16,2:8"
+#define ui_swaphand "7:16,2:2"
 #define ui_storage1 "9:18,1:5"
 #define ui_storage2 "10:20,1:5"
 
@@ -110,9 +110,8 @@
 #define ui_harm_small "12:39,1:1"
 
 //See active_slots.dm
-#define ui_hand1 "6:16,1:5"
-#define ui_hand2 "8:16,1:5"
-#define ui_hand3 "7:16,1:12"
+#define ui_hand1 "6:32,1:5"
+#define ui_hand2 "8:0,1:5"
 
 #define ui_hstore1 "5,5"
 #define ui_sleep "EAST+1, NORTH-13"

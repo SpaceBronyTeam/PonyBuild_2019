@@ -8,7 +8,7 @@
 
 /mob/var/list/datum/hand/list_hands = list()
 
-/datum/hand
+/datum/hand //Очень удобная система хэндслотов, но, к сожалению, в реалиях игры не очень нужная
 	var/name
 	var/obj/content = null
 	var/obj/screen/inventory/hand/slot
@@ -20,23 +20,18 @@
 	var/item_type = HOOF_ICON
 	var/slot_place = slot_r_hand
 
-	hoofkinesis										//1. Ключевые точки для взаимодействия
-		name = "hoofkinesis"
-		connect_organ_names = list("r_forehoof", "l_forehoof", "r_foreleg", "r_foreleg")
+
+	hand_slot_1
+		name = "handslot1"
+		connect_organ_names = list("head", "horn")
 		screen_loc = ui_hand1
 
-	telekinesis
-		name = "telekinesis"
-		connect_organ_names = list("horn")
-		screen_loc = ui_hand2
-		item_type = TELE_ICON
 
-	mouth
-		connect_organ_names = list("head")
-		name = "mouth"
-		screen_loc = ui_hand3
-		item_type = MOUTH_ICON
-		slot_place = slot_l_hand
+	hand_slot2										//1. Ключевые точки для взаимодействия
+		name = "handslot2"
+		connect_organ_names = list("r_forehoof", "l_forehoof", "r_foreleg", "r_foreleg")
+		screen_loc = ui_hand2
+
 
 	New(var/mob/M)
 		mymob = M

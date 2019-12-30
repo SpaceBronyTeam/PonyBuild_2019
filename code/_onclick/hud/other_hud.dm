@@ -108,7 +108,7 @@
 		"oxygen"			=  list("loc" = ui_oxygen, 			"state" = "oxy0" 		),
 		"fire"				=  list("loc" = ui_fire, 			"state" = "fire0" 		),
 		"health"			=  list("loc" = ui_borg_health, 	"state" = "health0"		),
-		"body temperature"	=  list("loc" = ui_zonesel, 			"state" = "temp1" 		),
+		"body temperature"	=  list("loc" = ui_zonesel, 		"state" = "temp1" 		),
 		"damage zone"		=  list("type"=/obj/screen/zone, "loc" = ui_nutrition, 	"noicon"= 1, "noname" = 1, "loc2" = ui_alienzone2),
 		"pull"				=  list("loc" = ui_borg_pull, 		"state" = "pull0" 		),
 		"module"			=  list("loc" = ui_borg_module, 	"state" = "nomod"		),

@@ -344,19 +344,15 @@
 		var/mob/living/carbon/pony/H = M
 		if(H.species.siemens_coefficient == 0)
 			return
-		switch(H.hand.type)
-			if(/datum/hand/mouth)
-				var/obj/item/clothing/G = H.head
-				if(G.siemens_coefficient == 0)	return 0
 
-			if(/datum/hand/hoofkinesis)
-				var/obj/item/clothing/G = H.shoes
-				if(G.siemens_coefficient == 0)	return 0
 
-			if(/datum/hand/telekinesis)
+		switch(H.species.name)
+			if("unicorn")
 				return 0
-			else
+
+			if("alicorn")
 				return 0
+
 
 	//Checks again. If we are still here subject will be shocked, trigger standard 20 tick warning
 	//Since this one is longer it will override the original one.
