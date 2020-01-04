@@ -15,6 +15,7 @@
 	var/r_eyes = 10
 	var/g_eyes = 10
 	var/b_eyes = 60
+	var/eyebrows_style
 
 	var/s_tone = 0	//Skin tone
 

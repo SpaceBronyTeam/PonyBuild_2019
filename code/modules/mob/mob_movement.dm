@@ -255,7 +255,9 @@
 		mob.last_move_intent = world.time + 10
 		switch(mob.m_intent)
 			if("fly")
-				move_delay -= 2
+				if(mob.drowsyness > 0)
+					move_delay += 2
+				move_delay += round(config.run_speed/2)
 			if("run")
 				if(mob.drowsyness > 0)
 					move_delay += 5

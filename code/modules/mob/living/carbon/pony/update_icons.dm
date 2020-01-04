@@ -461,8 +461,7 @@ proc/get_damage_icon_part(damage_state, body_part)
 	if(species.sprite_size == 32)
 		face_standing = new /icon('icons/mob/pony_face.dmi',"bald_s")
 
-		if(gender == FEMALE)	face_standing.Blend(new /icon('icons/mob/pony.dmi', "f1"), ICON_OVERLAY)
-		else					face_standing.Blend(new /icon('icons/mob/pony.dmi', "m"), ICON_OVERLAY)
+		face_standing.Blend(new /icon('icons/mob/pony.dmi', eyebrows_style), ICON_OVERLAY)
 
 	else
 		face_standing = new /icon(species.icobase, "bald_s")

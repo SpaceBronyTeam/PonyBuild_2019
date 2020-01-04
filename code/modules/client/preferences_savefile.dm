@@ -150,6 +150,7 @@
 	S["eyes_red"]			>> r_eyes
 	S["eyes_green"]			>> g_eyes
 	S["eyes_blue"]			>> b_eyes
+	S["eyebrows_style"]		>> eyebrows_style
 	S["pony_tail_style"]	>> pony_tail_style
 	S["cutie_mark"]			>> cutie_mark
 	S["backbag"]			>> backbag
@@ -233,6 +234,8 @@
 	if(!real_name)
 		randomize_appearance_for()
 		real_name = random_name(gender)
+
+	where_is_sanitize_of_pony_options
 
 	be_random_name	= sanitize_integer(be_random_name, 0, 1, initial(be_random_name))
 	gender			= sanitize_gender(gender)
@@ -337,6 +340,7 @@
 	S["eyes_red"]			<< r_eyes
 	S["eyes_green"]			<< g_eyes
 	S["eyes_blue"]			<< b_eyes
+	S["eyebrows_style"]		<< eyebrows_style
 	S["pony_tail_red"]		<< r_tail
 	S["pony_tail_green"]	<< g_tail
 	S["pony_tail_blue"]		<< b_tail

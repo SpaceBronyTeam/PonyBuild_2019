@@ -565,6 +565,12 @@
 	desc = "Mini-Mecha action figure! Collect them all! 3/11."
 	icon_state = "deathripleytoy"
 
+/obj/item/toy/prize/sosiskoed
+	name = "great sausage"
+	desc = "Sausage prize for great deals! It's very rear item."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "sosiskoed"
+
 /obj/item/toy/prize/gygax
 	name = "toy gygax"
 	desc = "Mini-Mecha action figure! Collect them all! 4/11."
@@ -947,10 +953,31 @@
 	desc = "A plushie of a cute kitten! Watch as it purrs it's way right into your heart."
 	icon_state = "kittenplushie"
 
+
+
 /obj/item/toy/plushie/pegasus
 	name = "pegasus plush"
-	desc = "A plushie of a scaly pegasus! Very controversial, after being accused as \"racist\" by some Unicorn."
-	icon_state = "pegasusplushie"
+	desc = "A plushie of a cute pegasus! Very controversial, after being accused as \"racist\" by some Unicorn."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "disk"
+
+/obj/item/toy/plushie/unicorn
+	name = "unicorn plush"
+	desc = "A plushie of a some unicorn! It's regular and very soft."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "twi"
+
+/obj/item/toy/plushie/kirin
+	name = "kirin plush"
+	desc = "A kirin plush! Made by unknown artist."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "kirin"
+
+/obj/item/toy/plushie/gryphon
+	name = "gryphon plush"
+	desc = "A plushie of a little gryphon officer! Someone thinks this is a dove."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "fritz"
 
 /obj/item/toy/plushie/spider
 	name = "spider plush"

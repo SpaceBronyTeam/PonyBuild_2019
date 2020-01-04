@@ -125,6 +125,13 @@
 	desc = "A warning sign which reads 'NO SMOKING'."
 	icon_state = "nosmoking2"
 
+/obj/structure/sign/haos
+	name = "officer portrait"
+	desc = "Under the picture there is a half-erased signature."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "haos"
+
+
 /obj/structure/sign/redcross
 	name = "medbay"
 	desc = "The Intergalactic symbol of Medical institutions. You'll probably get help here."

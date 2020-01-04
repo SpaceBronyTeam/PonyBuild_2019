@@ -63,6 +63,7 @@
 		s_tone = random_skin_tone()
 		h_style = random_style(gender, species)
 		f_style = random_style(gender, species, facial_hair_styles_list)
+		eyebrows_style = random_eyebrows_style(gender, species)
 		pony_tail_style = random_style(gender, species, pony_tail_styles_list)
 		randomize_hair_color()
 		randomize_eyes_color()
@@ -80,6 +81,17 @@
 		if(H)
 			copy_to(H,1)
 
+
+	proc/random_eyebrows_style(var/gender, var/species)
+		var/gender_label = (gender==MALE) ? "m" : "f"
+		var/number = rand(1,3)
+		var/species_label = lowertext(species)
+		if(lowertext(species) in list("alicorn", "unicorn", "earthpony", "pegasus"))
+			species_label = "pony"
+
+		eyebrows_style = "[species_label]_[gender_label][number]"
+
+		return "[species_label]_[gender_label][number]"
 
 	proc/randomize_hair_color(var/target)
 		if(prob (75) && target == "facial") // Chance to inherit hair color
@@ -359,8 +371,9 @@
 		if ((current_species && (current_species.flags & HAS_EYE_COLOR)))
 			eyes_s.Blend(rgb(r_eyes, g_eyes, b_eyes), ICON_ADD)
 
-		if(gender == FEMALE)	preview_icon.Blend(new /icon('icons/mob/pony.dmi', "f1"), ICON_OVERLAY)
-		else					preview_icon.Blend(new /icon('icons/mob/pony.dmi', "m"), ICON_OVERLAY)
+
+		var/icon/eyebrows_s = new/icon("icon" = 'icons/mob/pony.dmi', "icon_state" = eyebrows_style)
+		preview_icon.Blend(eyebrows_s, ICON_OVERLAY)
 
 		var/datum/sprite_accessory/hair_style = hair_styles_list[h_style]
 		if(hair_style)

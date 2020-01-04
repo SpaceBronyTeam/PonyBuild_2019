@@ -72,6 +72,7 @@ datum/preferences
 	var/r_hair = 0						//Hair color
 	var/g_hair = 0						//Hair color
 	var/b_hair = 0						//Hair color
+	var/eyebrows_style = "pony_m1"
 	var/f_style = "Shaved"				//Face hair type
 	var/r_facial = 0					//Face hair color
 	var/g_facial = 0					//Face hair color
@@ -253,14 +254,14 @@ datum/preferences
 			var/level = skills[S.ID]
 			HTML += "<tr style='text-align:left;'>"
 			HTML += "<th><a href='byond://?src=\ref[user];preference=skills;skillinfo=\ref[S]'>[S.name]</a></th>"
-			HTML += "<th><a href='byond://?src=\ref[user];preference=skills;setskill=\ref[S];newvalue=[SKILL_NONE]'><font color=[(level == SKILL_NONE) ? "red" : "black"]>\[Untrained\]</font></a></th>"
+			HTML += "<th><a href='byond://?src=\ref[user];preference=skills;setskill=\ref[S];newvalue=[SKILL_NONE]'><font color=[(level == SKILL_NONE) ? "red" : "black"]>\[[local("Untrained")]\]</font></a></th>"
 			// secondary skills don't have an amateur level
 			if(S.secondary)
 				HTML += "<th></th>"
 			else
-				HTML += "<th><a href='byond://?src=\ref[user];preference=skills;setskill=\ref[S];newvalue=[SKILL_BASIC]'><font color=[(level == SKILL_BASIC) ? "red" : "black"]>\[Amateur\]</font></a></th>"
-			HTML += "<th><a href='byond://?src=\ref[user];preference=skills;setskill=\ref[S];newvalue=[SKILL_ADEPT]'><font color=[(level == SKILL_ADEPT) ? "red" : "black"]>\[Trained\]</font></a></th>"
-			HTML += "<th><a href='byond://?src=\ref[user];preference=skills;setskill=\ref[S];newvalue=[SKILL_EXPERT]'><font color=[(level == SKILL_EXPERT) ? "red" : "black"]>\[Professional\]</font></a></th>"
+				HTML += "<th><a href='byond://?src=\ref[user];preference=skills;setskill=\ref[S];newvalue=[SKILL_BASIC]'><font color=[(level == SKILL_BASIC) ? "red" : "black"]>\[[local("Amateur")]\]</font></a></th>"
+			HTML += "<th><a href='byond://?src=\ref[user];preference=skills;setskill=\ref[S];newvalue=[SKILL_ADEPT]'><font color=[(level == SKILL_ADEPT) ? "red" : "black"]>\[[local("Trained")]\]</font></a></th>"
+			HTML += "<th><a href='byond://?src=\ref[user];preference=skills;setskill=\ref[S];newvalue=[SKILL_EXPERT]'><font color=[(level == SKILL_EXPERT) ? "red" : "black"]>\[[local("Professional")]\]</font></a></th>"
 			HTML += "</tr>"
 	HTML += "</table>"
 	HTML += "<a href=\"byond://?src=\ref[user];preference=skills;cancel=1;\">\[Done\]</a>"
@@ -348,8 +349,8 @@ datum/preferences
 	dat += "(<a href='?_src_=prefs;preference=all;task=random'>&reg;</A>)"
 	dat += "<br>"
 	dat += "[local("Species")]: <a href='?src=\ref[user];preference=species;task=change'>[species]</a><br>"
-	if(species == "Unicorn")
-		dat += "<b><a href=\"byond://?src=\ref[user];preference=spelloptions;active=0\">[local("Set Spells")]</b></a><br>"
+	//if(species == "Unicorn")
+	//	dat += "<b><a href=\"byond://?src=\ref[user];preference=spelloptions;active=0\">[local("Set Spells")]</b></a><br>"
 	dat += "[local("Secondary Language")]: <a href='byond://?src=\ref[user];preference=language;task=input'>[language]</a><br>"
 	dat += "[local("Blood Type")]: <a href='byond://?src=\ref[user];preference=b_type;task=input'>[b_type]</a><br>"
 	//dat += "Skin Tone: <a href='?_src_=prefs;preference=s_tone;task=input'>[-s_tone + 35]/220<br></a>"//Пони не нужно
@@ -439,7 +440,7 @@ datum/preferences
 	dat += "<b>[local("Home system")]</b>: <a href='byond://?src=\ref[user];preference=home_system;task=input'>[home_system]</a><br/>"
 	dat += "<b>[local("Citizenship")]</b>: <a href='byond://?src=\ref[user];preference=citizenship;task=input'>[citizenship]</a><br/>"
 	dat += "<b>[local("Faction")]</b>: <a href='byond://?src=\ref[user];preference=faction;task=input'>[faction]</a><br/>"
-	dat += "<b>[local("Religion")]</b>: <a href='byond://?src=\ref[user];preference=religion;task=input'>[religion]</a><br/>"
+	//dat += "<b>[local("Religion")]</b>: <a href='byond://?src=\ref[user];preference=religion;task=input'>[religion]</a><br/>"
 
 	dat += "</td><td><b>[local("Preview")]</b><br><img src=previewicon.png height=64 width=64><img src=previewicon2.png height=64 width=64></td></tr></table>"
 
@@ -475,6 +476,7 @@ datum/preferences
 
 	dat += "<br><b>[local("Eyes")]: </b>"
 	dat += "<font face='fixedsys' size='3' color='#[num2hex(r_eyes, 2)][num2hex(g_eyes, 2)][num2hex(b_eyes, 2)]'><table  style='display:inline;' bgcolor='#[num2hex(r_eyes, 2)][num2hex(g_eyes, 2)][num2hex(b_eyes)]'><tr><td><a href='?_src_=prefs;preference=eyes;task=input'>__</a></td></tr></table></font> <br>"
+	dat += " [local("Eyebrows Style")]: <a href='?_src_=prefs;preference=eyebrows_style;task=input'>[local("Change")]</a><br>"
 
 	dat += "<br><b>[local("Body Color")]: </b><br>"
 	//dat += " <font face='fixedsys' size='3' color='#[num2hex(r_backcolor, 2)][num2hex(g_backcolor, 2)][num2hex(b_backcolor, 2)]'><table style='display:inline;' bgcolor='#[num2hex(r_backcolor, 2)][num2hex(g_backcolor, 2)][num2hex(b_backcolor)]'><tr><td><a href='?_src_=prefs;preference=backcolor;task=input'>__</a></td></tr></table></font>   background color<br>"
@@ -1453,6 +1455,8 @@ datum/preferences
 					pony_tail_style = random_style(gender, species, pony_tail_styles_list)
 				if("pony_tail_color")
 					randomize_hair_color("tail")
+				if("eyebrows_style")
+					eyebrows_style = random_eyebrows_style(gender, species)
 				if("aura")
 					randomize_aura_color()
 					//ShowChoices(user)
@@ -1621,6 +1625,20 @@ datum/preferences
 						r_eyes = hex2num(copytext(new_eyes, 2, 4))
 						g_eyes = hex2num(copytext(new_eyes, 4, 6))
 						b_eyes = hex2num(copytext(new_eyes, 6, 8))
+
+				if("eyebrows_style")
+					var/number = text2num(copytext(eyebrows_style, lentext(eyebrows_style)))
+
+					number++
+					if(number>3)	number = 1
+
+					var/gender_label = (gender==MALE) ? "m" : "f"
+					var/species_label = lowertext(species)
+					if(lowertext(species) in list("alicorn", "unicorn", "earthpony", "pegasus"))
+						species_label = "pony"
+
+					eyebrows_style = "[species_label]_[gender_label][number]"
+					ShowChoices(user)
 
 				if("s_tone")
 					if(species != "Earthpony")
@@ -1822,6 +1840,7 @@ datum/preferences
 						gender = FEMALE
 					else
 						gender = MALE
+					randomize_appearance_for()
 
 				if("disabilities")				//please note: current code only allows nearsightedness as a disability
 					disabilities = !disabilities//if you want to add actual disabilities, code that selects them should be here
@@ -1967,6 +1986,7 @@ datum/preferences
 
 	character.h_style = h_style
 	character.f_style = f_style
+	character.eyebrows_style = eyebrows_style
 
 	character.home_system = home_system
 	character.citizenship = citizenship

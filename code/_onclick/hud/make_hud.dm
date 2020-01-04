@@ -63,6 +63,7 @@
 			if("module2")	mymob:inv2 = using
 			if("module3")	mymob:inv3 = using
 
+
 			if("act_intent")//»конка режимов атаки
 				using.layer = 20
 				using.icon_state = "intent_"+mymob.a_intent
@@ -164,6 +165,12 @@
 					if(slot_data["loc2"])		S.screen_loc = slot_data["loc2"]
 					else						S.screen_loc = using.screen_loc
 				hud_elements |= using:connect_list
+
+			if("ulight")
+				var/mob/living/carbon/pony/P = target
+				var/datum/organ/external/E = P.get_organ("horn")
+				if(!E || (E.status & ORGAN_DESTROYED))
+					using.screen_loc = null//ƒл€ пони без рога эта кнопка должна быть не видна
 
 
 			//if("cell")			mymob:cell = using		//ƒл€ роботов

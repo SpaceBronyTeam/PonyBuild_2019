@@ -9,8 +9,10 @@
 S_Spy - Host
 Aphimag - Host
 
+HaosHay - Head Admin
 Nicknam - Head Admin
 
+FridgeMan - Game Admin
 GENERALLEGION - Game Admin
 
 Dudeman1011 - Moderator

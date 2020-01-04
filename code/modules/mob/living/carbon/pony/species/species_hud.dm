@@ -44,7 +44,8 @@
 		"body temperature"	=  list("loc" = ui_temp, 		"state" = "temp1" 								 ),
 		"nutrition"			=  list("loc" = ui_nutrition, 	"state" = "nutrition0" 							 ),
 		"emoji"				=  list("loc" = ui_emoji, 		"state" = "0", "noicon"	= 1						 ),
-		"damage zone"		=  list("loc" = ui_zonesel, 	"noicon"= 1, "noname" = 1,	"loc2" = ui_zonesel2 )
+		"damage zone"		=  list("loc" = ui_zonesel, 	"noicon"= 1, "noname" = 1,	"loc2" = ui_zonesel2 ),
+		"ulight"			=  list("loc" = ui_ulight,	 	"state" = "act_ulight"								)
 	)
 	var/list/hud_splash_add = list(
 		"flash"				=  list("loc" = "1,1 to 15,15", "state" = "blank", 			 				),

@@ -357,6 +357,17 @@ proc/get_pixel_list(var/obj/screen/zone_sel/O)
 				var/mob/living/carbon/pony/H = usr
 				H.quick_equip()
 
+		if("ulight")
+			if (istype(usr.loc,/obj/mecha)) // stops inventory actions in a mech
+				return 1
+			if(ispony(usr))
+				if(icon_state == "act_ulight")
+					icon_state = "act_ulight_active"
+					usr.SetLuminosity(usr.luminosity+2)//Тут можно настроить силу ауры в будущем
+				else if(icon_state == "act_ulight_active")
+					icon_state = "act_ulight"
+					usr.SetLuminosity(usr.luminosity-2)
+
 		if("resist")
 			if(isliving(usr))
 				var/mob/living/L = usr
